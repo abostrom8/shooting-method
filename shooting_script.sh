@@ -9,9 +9,9 @@ while [ $COUNTER -lt NUM_EVALS ]; do
   let COUNTER=COUNTER+1
 done
 
-foreach value
-($EVALS)
+foreach value ($EVALS)
   echo Starting run with value=$value
   ./shooting $value
+  gnuplot -persist -e "plot 'output.dat'" loop.plt
   if ($status) echo WARNING: Problem during execution
 end
