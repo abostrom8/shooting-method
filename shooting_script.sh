@@ -9,9 +9,11 @@ while [ $COUNTER -lt NUM_EVALS ]; do
   let COUNTER=COUNTER+1
 done
 
+#Run the code with each value of E and plot using gnuplot
 foreach value ($EVALS)
   echo Starting run with value=$value
   ./shooting $value
   gnuplot -persist -e "plot 'output.dat'" loop.plt
+  #loop.plt refreshes the plot every two seconds
   if ($status) echo WARNING: Problem during execution
 end
