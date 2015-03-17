@@ -3,10 +3,8 @@
 #include <math.h>
 
 #define v 140
-#define E -0.0882721 /* E/V0 */
+//#define E -0.0882721 /* E/V0 */
 #define out_file "output.dat"
-
-// Try using a shell script to run code, plot in real time, and change energy?
 
 void euler(double u[], double dudt[], double h, int theta){
     dudt[0]=u[1];
@@ -16,10 +14,13 @@ void euler(double u[], double dudt[], double h, int theta){
     // u[0] corresponds to u, u[1] corresponds to w
 }
 
-int main(){
-    double h=0.0001;
+int main(int argc, char *argv[]){
+    double h=0.0001,E;
     double u[2],dudt[2];
     int i,theta;
+    
+    // Read in user-supplied energy
+    E=atoi(argv[1]);
     
     // Initial conditions
     u[0]=0.0;
