@@ -4,7 +4,7 @@
 
 #define v 140
 #define E -0.0882721 /* E/V0 */
-#define out_file "output2.dat"
+#define out_file "output.dat"
 
 // Try using a shell script to run code, plot in real time, and change energy?
 
