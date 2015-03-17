@@ -9,3 +9,9 @@ while [ $COUNTER -lt NUM_EVALS ]; do
   let COUNTER=COUNTER+1
 done
 
+foreach value
+($EVALS)
+  echo Starting run with value=$value
+  ./shooting $value
+  if ($status) echo WARNING: Problem during execution
+end
