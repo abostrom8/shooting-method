@@ -1,3 +1,3 @@
-pause 2
+pause 1e-3
 replot
 reread
